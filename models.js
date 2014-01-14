@@ -3,16 +3,20 @@ var db, mongoose;
 
 mongoose = require('mongoose');
 
-mongoose.connect('');
+mongoose.connect('mongodb://localhost/nodeblog');
 
 db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 
+db.once('open', function() {
+  return console.log("yess connection successful");
+});
+
 module.exports = mongoose.model('Ama', {
   title: String,
   content: String,
-  posted_on: new Date(),
+  posted_on: Date,
   posted_by: String,
   votes: Number,
   published: Boolean,

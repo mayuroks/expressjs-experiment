@@ -1,5 +1,5 @@
 # Contains routes functions (Django views) for our ama blog
-ama = require '../model'	# defined collection ama using model
+ama = require '../models'	# defined collection ama using model
 
 exports.postama = (req, res) ->
 	recored = new ama()
@@ -12,7 +12,7 @@ exports.listama = (req, res) ->
 		if err then console.log err
 		else 
 			console.log results
-			res.send(results)
+			# res.send(results)
+			res.render('index', {title: 'ama', entries: results})
 
-
-exports.detailama
+# exports.detailama
