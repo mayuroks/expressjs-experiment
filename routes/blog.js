@@ -4,8 +4,17 @@ var ama;
 ama = require('../models');
 
 exports.postama = function(req, res) {
-  var recored;
-  return recored = new ama();
+  var record;
+  record = new ama();
+  record.title = req.body.title;
+  record.content = req.body.content;
+  return record.save(function(err) {
+    if (err) {
+      return console.log(err);
+    } else {
+      return res.json(req.body);
+    }
+  });
 };
 
 exports.listama = function(req, res) {
@@ -15,8 +24,27 @@ exports.listama = function(req, res) {
     } else {
       console.log(results);
       return res.render('index', {
-        title: 'ama',
+        pop: 'ama',
         entries: results
+      });
+    }
+  });
+};
+
+exports.blogform = function(req, res) {
+  return res.render('form');
+};
+
+exports.detailview = function(req, res) {
+  return ama.findOne({
+    '_id': req.params.id
+  }, function(err, results) {
+    if (err) {
+      return console.log(err);
+    } else {
+      console.log(results);
+      return res.render('ama', {
+        ama: results
       });
     }
   });

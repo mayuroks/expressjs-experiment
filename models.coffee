@@ -14,7 +14,6 @@ module.exports = mongoose.model 'Ama', {
 	posted_by: String
 	votes: Number
 	published: Boolean
-	comments: Number
 }
 
 # Model for comments

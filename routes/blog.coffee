@@ -2,10 +2,18 @@
 ama = require '../models'	# defined collection ama using model
 
 exports.postama = (req, res) ->
-	recored = new ama()
+	record = new ama()
+	record.title = req.body.title
+	record.content = req.body.content
+
+	record.save (err) ->
+		if err
+			console.log(err)
+		else
+			res.json(req.body)
+	# res.send("SAVED " + req.body.title)
 	# LOTS of code to be written
 	# to save title,body,posted_on, by, published etc
-	# need a form for this stuff
 	
 exports.listama = (req, res) ->
 	ama.find {}, (err, results) ->
@@ -13,6 +21,17 @@ exports.listama = (req, res) ->
 		else 
 			console.log results
 			# res.send(results)
-			res.render('index', {title: 'ama', entries: results})
+			res.render('index', {pop: 'ama', entries: results})
+			# RENDER FORMAT ('template_name', {key: value_params_to_b_displayed})
 
-# exports.detailama
+exports.blogform = (req, res) ->
+	# FORM for a new blog entry
+	res.render('form')
+
+exports.detailview = (req, res) ->
+	ama.findOne {'_id': req.params.id}, (err, results) ->
+		if err then console.log err
+		else
+			console.log results
+			res.render('ama', {ama: results})
+			# res.json(results)
