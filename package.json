@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "supervisor app.js"
   },
   "dependencies": {
     "express": "3.4.7",
     "hbs": "*",
-    "mongoose": "~3.8.4"
+    "mongoose": "~3.8.4",
+    "supervisor": "~0.5.6"
   }
 }
