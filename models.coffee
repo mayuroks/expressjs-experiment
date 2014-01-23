@@ -1,5 +1,10 @@
 mongoose = require 'mongoose'
-mongoose.connect 'mongodb://localhost/nodeblog'	# Isnt specified yet
+
+db_uri = process.env.MONGOLAB_URI || 
+		process.env.MONGOHQ_URL || 
+		'mongodb://localhost/nodeblog'
+
+mongoose.connect db_uri	# Isnt specified yet
 db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 
