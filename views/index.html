@@ -1,11 +1,12 @@
-
+{% extends "base.html" %}
+{% block title %}List of AMAs{% endblock %}
+{% block content %}
 <h1>AMA!</h1>
  
-{{#each entries}} <!-- Unpacking the DB entries --> 
+{% for ama in entries %} <!-- Unpacking the DB entries --> 
    <p>
-      <a href="/ama/{{_id}}">{{title}}</a><br/>
-      Published: {{content}}
+      <a href="/ama/{{ama['id']}}">{{ama.title}}</a><br/>
+      {# Published: {{content}} #}
    </p>
-{{/each}}
- 
-
+{% endfor %}
+{% endblock %}

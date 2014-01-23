@@ -1,7 +1,15 @@
-<h1>{{ama.title}}</h1>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/flatui/css/flat-ui.css">
+</head>
+<body>
+<div class="container">
+<h1>{{ama['title']}}</h1>
 <p>
-Published: {{ama.published}}
- 
+{# Published: {{ama.published}} #}
+{{ama.content}} 
 <p/>
- 
-{{ama.content}}
+</div>
+ </body>
+{% include "./layout.html" %}
+</html>
