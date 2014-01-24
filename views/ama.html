@@ -1,15 +1,8 @@
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="/flatui/css/flat-ui.css">
-</head>
-<body>
-<div class="container">
-<h1>{{ama['title']}}</h1>
-<p>
-{# Published: {{ama.published}} #}
-{{ama.content}} 
-<p/>
-</div>
- </body>
-{% include "./layout.html" %}
-</html>
+{% extends "base.html" %}
+{% block title %}{{ama['title']}}{% endblock %}
+
+{% block content %}
+<h1>{{ama['title']}}
+</h1>
+<p>{{ama['content']}}</p>
+{% endblock %}

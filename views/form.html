@@ -1,6 +1,10 @@
-<h1>BLOG POST form</h1>
+{% extends "base.html" %}
+{% block title %}BLOG form{% endblock %}
+{% block content %}
+<h1>BLOG form</h1>
 <form action='/postama' method="POST">
-	Title: <input type="text" name="title" value="">
-	Content: <input type="text" name="content" value="">
-	<input type="submit" name="Submit">
+	Title:<input type="text" name="title" class="form-control" placeholder="Text input" required><br>
+	Content:<textarea name="content" class="form-control" rows="3"></textarea>
+	<input type="submit" class="btn btn-primary" name="Submit" required>
 </form>
+{% endblock %}

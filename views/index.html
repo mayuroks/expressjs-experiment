@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block title %}List of AMAs{% endblock %}
 {% block content %}
-<h1>AMA!</h1>
+<h1>List of amas available</h1>
  
 {% for ama in entries %} <!-- Unpacking the DB entries --> 
    <p>
-      <a href="/ama/{{ama['id']}}">{{ama.title}}</a><br/>
+      <h2><a class="disabled" href="/ama/{{ama['id']}}">{{ama.title}}</a> <span class="glyphicon glyphicon-trash"></span></h2><br/>
       {# Published: {{content}} #}
    </p>
 {% endfor %}

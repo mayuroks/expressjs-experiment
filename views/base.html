@@ -1,11 +1,43 @@
 <html>
 	<head>
-		<title>{% block title %}{% endblock %}</title>
+		<title>Mayur Rokade | {% block title %}{% endblock %}</title>
 		<link rel="stylesheet" type="text/css" href="/flatui/css/flat-ui.css">
+		<link rel="stylesheet" type="text/css" href="/flatui/bootstrap/css/bootstrap.css">
 	</head>
 	<body>
 		<div class="container">
+			<div class="row">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+					<!-- Navbar content -->
+					<a class="navbar-brand" href="/listama">EXPress EXPeriment</a>
+					</div>
+					<form class="navbar-form navbar-left" action="#" role="search">
+      					<div class="form-group">
+        				<div class="input-group">
+          					<input class="form-control" id="navbarInput-01" type="search" placeholder="Elastic Search">    
+        				</div>
+      					</div>               
+    				</form>
+    				<div class="navbar-form btn-group pull-right">
+	    				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+	      				ACTIONS
+	      				<span class="caret"></span>
+	    				</button>
+					    <ul class="dropdown-menu">
+					      <li><a href="#">Dropdown link</a></li>
+					      <li><a href="#">Dropdown link</a></li>
+					    </ul>
+  					</div>
+				</nav>
+			</div>
+			<div class="row">
+				<div class="col-xs-2"> RESERVED for sidebar <br>
+				include "./sidebar.html"</div>
+				<div class="col-xs-6">
 		{% block content %}{% endblock %}
+				</div>
+			</div>
 		</div>
 	</body>
 	{% include "./layout.html" %}
