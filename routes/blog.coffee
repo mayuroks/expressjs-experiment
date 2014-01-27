@@ -30,8 +30,16 @@ exports.blogform = (req, res) ->
 
 exports.detailview = (req, res) ->
 	ama.findOne {'_id': req.params.id}, (err, results) ->
-		if err then console.log err
+		if err then return console.log err
 		else
 			console.log results
 			res.render('ama', {ama: results})
 			# res.json(results)
+
+exports.deleteview = (req, res) ->
+	ama.remove {'_id': req.params.id }, (err) ->
+		if err then return console.log err
+		else
+			res.send(req.params.id + " Deleted")
+		# product.findById req.body.id, (err, product) ->
+		# 	console.log product

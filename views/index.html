@@ -5,7 +5,7 @@
  
 {% for ama in entries %} <!-- Unpacking the DB entries --> 
    <p>
-      <h2><a class="disabled" href="/ama/{{ama['id']}}">{{ama.title}}</a> <span class="glyphicon glyphicon-trash"></span></h2><br/>
+      <h2><a class="disabled" href="/ama/{{ama['id']}}">{{ama.title}}</a><a href="/delete/{{ama['id']}}"><span class="glyphicon glyphicon-trash"></span></h2></a><br/>
       {# Published: {{content}} #}
    </p>
 {% endfor %}

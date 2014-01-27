@@ -43,6 +43,7 @@ app.get('/listama', blog.listama);
 app.get('/blogform', blog.blogform);	// USER INPUT
 app.post('/postama', blog.postama);		// FORM PROCESSING
 app.get('/ama/:id', blog.detailview);
+app.get('/delete/:id', blog.deleteview);	// DELETEVIEW using GET
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

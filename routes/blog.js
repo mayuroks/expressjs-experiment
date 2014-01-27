@@ -49,3 +49,15 @@ exports.detailview = function(req, res) {
     }
   });
 };
+
+exports.deleteview = function(req, res) {
+  return ama.remove({
+    '_id': req.params.id
+  }, function(err) {
+    if (err) {
+      return console.log(err);
+    } else {
+      return res.send(req.params.id + " Deleted");
+    }
+  });
+};
