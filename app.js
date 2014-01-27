@@ -12,7 +12,7 @@ var http = require('http');
 var path = require('path');
 
 var app = express();
-var hbs = require('hbs');
+// var hbs = require('hbs');
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
