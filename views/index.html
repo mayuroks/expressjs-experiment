@@ -5,7 +5,8 @@
  
 {% for ama in entries %} <!-- Unpacking the DB entries --> 
    <p>
-      <h2><a class="disabled" href="/ama/{{ama['id']}}">{{ama.title}}</a></h2><button type="button" class="btn btn-default btn-lg" formaction="/delete/{{ama['id']}}" onclick="return func();"><span class="glyphicon glyphicon-trash"></span></button><br/>
+      <h2><a class="disabled" href="/ama/{{ama['id']}}">{{ama.title}}</a></h2>
+      <button type="button" class="btn btn-default btn-lg" data-amaid="{{ama['id']}}"><span class="glyphicon glyphicon-trash"></span></button><br/>
       {# Published: {{content}} #}
    </p>
 {% endfor %}

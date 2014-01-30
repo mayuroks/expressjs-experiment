@@ -12,7 +12,7 @@ exports.postama = function(req, res) {
     if (err) {
       return console.log(err);
     } else {
-      return res.json(req.body);
+      return res.redirect(301, '/listama');
     }
   });
 };

@@ -10,7 +10,8 @@ exports.postama = (req, res) ->
 		if err
 			console.log(err)
 		else
-			res.json(req.body)
+			res.redirect(301,'/listama')
+			# res.json(req.body)
 	# res.send("SAVED " + req.body.title)
 	# LOTS of code to be written
 	# to save title,body,posted_on, by, published etc
