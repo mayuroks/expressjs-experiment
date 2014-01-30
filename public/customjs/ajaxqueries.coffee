@@ -1,3 +1,5 @@
+func = () ->
+	alert "function works"
+
 $ ->
-	console.log "Loaded"
-	alert "custom JS loaded"
+	console.log "Loaded function script"
