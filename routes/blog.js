@@ -18,6 +18,8 @@ exports.postama = function(req, res) {
 };
 
 exports.listama = function(req, res) {
+  req.session.View = 'List of all AMAs. Enjoy !';
+  res.setHeader('Custom-Header', req.session.View);
   return ama.find({}, function(err, results) {
     if (err) {
       return console.log(err);
@@ -32,6 +34,7 @@ exports.listama = function(req, res) {
 };
 
 exports.blogform = function(req, res) {
+  res.setHeader('Custom-Sexy-Header', req.session.View);
   return res.render('form');
 };
 

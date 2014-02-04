@@ -17,6 +17,8 @@ exports.postama = (req, res) ->
 	# to save title,body,posted_on, by, published etc
 	
 exports.listama = (req, res) ->
+	req.session.View = 'List of all AMAs. Enjoy !'
+	res.setHeader 'Custom-Header', req.session.View
 	ama.find {}, (err, results) ->
 		if err then console.log err
 		else 
@@ -27,6 +29,7 @@ exports.listama = (req, res) ->
 
 exports.blogform = (req, res) ->
 	# FORM for a new blog entry
+	res.setHeader 'Custom-Sexy-Header', req.session.View
 	res.render('form')
 
 exports.detailview = (req, res) ->
